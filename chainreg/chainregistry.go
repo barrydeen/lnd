@@ -822,11 +822,20 @@ func getBitcoindHealthCheckCmd(client *rpcclient.Client) (string, int64, error) 
 var (
 	// BitcoinTestnetGenesis is the genesis hash of Bitcoin's testnet
 	// chain.
-	BitcoinTestnetGenesis = chainhash.Hash([chainhash.HashSize]byte{
+	BitcoinTestnet3Genesis = chainhash.Hash([chainhash.HashSize]byte{
 		0x43, 0x49, 0x7f, 0xd7, 0xf8, 0x26, 0x95, 0x71,
 		0x08, 0xf4, 0xa3, 0x0f, 0xd9, 0xce, 0xc3, 0xae,
 		0xba, 0x79, 0x97, 0x20, 0x84, 0xe9, 0x0e, 0xad,
 		0x01, 0xea, 0x33, 0x09, 0x00, 0x00, 0x00, 0x00,
+	})
+
+	// BitcoinTestnet4 Genesis is the genesis hash of Bitcoin's testnet4
+	// chain.
+	BitcoinTestnet4Genesis = chainhash.Hash([chainhash.HashSize]byte{
+		0x43, 0xf0, 0x8b, 0xda, 0xb0, 0x50, 0xe3, 0x5b,
+		0x56, 0x7c, 0x86, 0x4b, 0x91, 0xf4, 0x7f, 0x50,
+		0xae, 0x72, 0x5a, 0xe2, 0xde, 0x53, 0xbc, 0xfb,
+		0xba, 0xf2, 0x84, 0xda, 0x00, 0x00, 0x00, 0x00,
 	})
 
 	// BitcoinSignetGenesis is the genesis hash of Bitcoin's signet chain.
@@ -868,7 +877,14 @@ var (
 			},
 		},
 
-		BitcoinTestnetGenesis: {
+		BitcoinTestnet3Genesis: {
+			{
+				"test.nodes.lightning.directory",
+				"soa.nodes.lightning.directory",
+			},
+		},
+
+		BitcoinTestnet4Genesis: {
 			{
 				"test.nodes.lightning.directory",
 				"soa.nodes.lightning.directory",

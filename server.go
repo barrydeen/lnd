@@ -2209,7 +2209,13 @@ func (s *server) Start() error {
 		if s.cfg.Bitcoin.TestNet3 {
 			setSeedList(
 				s.cfg.Bitcoin.DNSSeeds,
-				chainreg.BitcoinTestnetGenesis,
+				chainreg.BitcoinTestnet3Genesis,
+			)
+		}
+		if s.cfg.Bitcoin.TestNet4 {
+			setSeedList(
+				s.cfg.Bitcoin.DNSSeeds,
+				chainreg.BitcoinTestnet4Genesis,
 			)
 		}
 		if s.cfg.Bitcoin.SigNet {
